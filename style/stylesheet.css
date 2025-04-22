@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    --choco : #411900;
+    --w-choco: #FFCA99;
+    --logo-pink: #E91E63;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/*Aplica a cor na barra de navegação*/
+.background-choco {
+    background-color: var(--choco);
+}
+
+/*Define uma classe reutilizável para delimitar o conteúdo da pagina*/
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+/*Define a fonte da barra de navegação*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/*Define o estilo da logo*/
+.logo a{
+    font-size: 40px;
+    color: var(--logo-pink) ;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+/*Define o estilo das páginas na barra de navegação*/
+.paginas {
+    display: flex;
+    align-items: center;
+}
+
+.paginas li{
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.paginas a {
+    color: white;
+}
+
+/*Define o estilo do main*/
+
+.img-main {
+    width: 300px;
+    height: 300px;
+}
+
+.main-text {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main-text h1 {
+    padding: 20px 0;
+    color: var(--logo-pink);
+    font-family: "Pacifico", cursive;
+
+}
+
+.main-text h2 {
+    padding: 20px 0;
+    color: var(--choco);
+    font-weight: bolder;
+}
+
+#main-entrega {
+    color: var(--logo-pink);
+}
+
+.titulo-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Pacifico", cursive;
+}
+
+.titulo-sec h1 {
+    font-size: 30px ;
+    color: var(--logo-pink);
+    margin-bottom: 20px;
+}
+
+/*Define um padrão para a linha de separação das seções*/
+.linha {
+    width: 100%;
+    height: 1px;
+    border: 0px;
+    background-color: var(--logo-pink);
+    margin: 20px;
+}
+
+
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+}
+
+
+
+/*Define uma estilização para os cards de produtos*/
+
+.card-produto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+    text-align: center;
+}
+
+
+.card-produto h2 {
+    font-size: 25px;
+    color: var(--logo-pink);
+}
+
+.card-produto p {
+    color: var(--choco);
+    font-weight: bold;
+    
+}
+
+.card-produto img {
+    border-radius: 100%;
+    border-style: solid;
+    border-color: var(--logo-pink);
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+/*Define a estilização da area sobre*/
+
+.moldura-sobre {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border-style: solid;
+    overflow: hidden;
+    border-color: var(--logo-pink);
+}
+
+.moldura-sobre img{
+   object-fit: cover;
+}
+
+.card-sobre-mim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.card-sobre-mim h1 {
+    color: var(--logo-pink);
+    padding: 20px 0;
+    font-size: 40px;
+}
+
+.card-sobre-mim h2 {
+    color: var(--choco);
+}
+
+
+
+
+/*Define a estilização da seção de compra*/
+
+.comprar {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+
+}
+.comprar a{
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    width: 450px;
+    height: 150px;
+    border-radius: 30px;
+    background-color: pink;
+    text-align: center;
+
+}
+
+.comprar img{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/*Define a estilização do rodapé da página*/
+footer {
+    background-color: var(--logo-pink);
+}
+
+.footer-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+
+.footer-data a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 4px;
+    font-family: "Pacifico", cursive;
+    color: black;
+}
+
+.footer-data img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*Define o estilo do menu mobile para responsividade da página*/
+
+/*Define o estado padrão do botão*/
+.menu-mobile {
+    display:none;
+    position:relative;
+    z-index: 10;
+}
+
+
+
+/*Define os codigos para responsividade da página*/
+@media(max-width: 1022px){
+    .paginas{
+        transition: 200ms;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--choco);
+    }
+
+    .paginas li {
+        font-size: 30px;
+        margin: 20px 0;
+        font-weight: bolder;
+    }
+
+    .paginas.ativo {
+        left: 0;
+    }
+    
+    .menu-mobile{
+        display: block;
+    }
+
+
+    .lista-produtos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
