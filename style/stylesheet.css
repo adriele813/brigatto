@@ -143,7 +143,8 @@ nav {
 
 .card-produto p {
     color: var(--choco);
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 20px;
     
 }
 
@@ -157,6 +158,26 @@ nav {
 }
 
 
+.card-produto a {
+    display: flex;
+    background-color: pink;
+    width: 200px;
+    color: var(--choco);
+    height: 40px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: auto;
+    
+}
+
+.card-produto a:hover {
+    transition: 200ms;
+    background-color: var(--logo-pink);
+}
 
 
 /*Define a estilização da area sobre*/
