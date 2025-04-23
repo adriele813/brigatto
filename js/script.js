@@ -35,3 +35,28 @@ botoesnav.forEach(button => {
 
     });
   });
+
+
+  //Inicia o Modal de Boas vindas apenas quando a página é iniciada pela primeira vez
+
+  //Verifica se é o primeiro acesso do usuário e caso seja, exibe o modal.
+  var modal = document.getElementById("modal-boas-vindas");
+  var viuModal = localStorage.getItem("viuModal")
+
+  //Caso seja o primeiro acesso, exibe.
+  if(!viuModal) {
+
+    modal.showModal();
+
+  }
+
+  localStorage.setItem('viuModal', 'true');
+
+  //Fecha o modal caso o botão seja pressionado
+  var botaoFecharModal = document.getElementById("botaoFecharModal")
+
+  botaoFecharModal.addEventListener('click', ()=>{
+    
+    modal.close();
+
+  });

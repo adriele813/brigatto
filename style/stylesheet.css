@@ -6,14 +6,26 @@
     --logo-pink: #E91E63;
 }
 
-
-*{
+/*Aplica um comportamento padrão para todos os elementos exceto os dialogs*/
+/*OBS: Foi necessário um reset especifico pois estavam ocorrendo conflitos com o dialog*/
+html, body {
     margin: 0;
     padding: 0;
+  }
+  
+  *, *::before, *::after {
     box-sizing: border-box;
-    text-decoration: none;
+  }
+  
+  ul, ol {
     list-style: none;
-}
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
 
 
 /*Aplica a cor na barra de navegação*/
@@ -59,6 +71,60 @@ nav {
 .paginas a {
     color: white;
 }
+
+
+/*Define o Estilo do Modal de Boas Vindas*/
+
+.modal {
+    border-style: none;
+    padding: 40px 40px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header h1{
+    color: var(--logo-pink) ;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    margin: 0;
+    font-size: 30px;
+}
+
+.modal-body h2 {
+    font-family: "Pacifico", cursive;
+    color: var(--choco);
+    margin: 20px;
+    font-size: 20px;
+}
+
+.botao-modal{
+    border: none;
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: pink;
+    font-weight: bolder;
+    font-size: 20px;
+    color: var(--choco);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 
 /*Define o estilo do main*/
 
@@ -221,27 +287,30 @@ nav {
 .comprar {
     display: flex;
     justify-content: center;
-    padding: 100px 0;
+    padding: 100px 0px;
 
 }
 .comprar a{
-    gap: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: black;
-    width: 450px;
-    height: 150px;
+    padding: 20px 30px;
     border-radius: 30px;
     background-color: pink;
     text-align: center;
+}
 
+.comprar a:hover {
+    transition: 200ms;
+    background-color: var(--logo-pink);
 }
 
 .comprar img{
     width: 100px;
     height: 100px;
+    margin-right: 20px;
 }
 
 
