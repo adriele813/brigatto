@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brigatto</title>
     <link rel="stylesheet" href="style\stylesheet.css">
+    <!--Adiciona o fontAwesome no site-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image\x-icon" href="img/icons/favicon.png">
+
+    <!--Adiciona o Jquery no site-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!--Adiciona o Scroll Reveal no site-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
@@ -45,10 +53,11 @@
                     
                     <!--Cria os seletores de páginas do cabeçalho-->
                     <ul class="paginas">
-                        <li><a href="#produtos" class="botaonav">Produtos</a></li>
-                        <li><a href="#brigadeiros" class="botaonav">Opções de brigadeiro</a></li>
-                        <li><a href="#sobre-mim" class="botaonav">Sobre Mim</a></li>
-                        <li><a href="#onde-comprar" class="botaonav">Onde Comprar</a></li>
+                        <li class="nav_item"><a href="#inicio" class="botaonav">Inicio</a></li>
+                        <li class="nav_item"><a href="#produtos" class="botaonav">Produtos</a></li>
+                        <li class="nav_item"><a href="#brigadeiros" class="botaonav">Opções de brigadeiro</a></li>
+                        <li class="nav_item"><a href="#sobre-mim" class="botaonav">Sobre Mim</a></li>
+                        <li class="nav_item"><a href="#onde-comprar" class="botaonav">Onde Comprar</a></li>
                     </ul>
 
                     <div class="menu-mobile">
@@ -66,17 +75,21 @@
     <!--Parte principal da página-->
     <main>
 
-        <div class="container">
+        <section id="inicio">
 
-            <div class="main-text">
-                <img src="img/logo.png" class="img-main" alt="Logo da marca">
-                <h1>Porque amor também se serve em forminha</h1>
-                <h2>A Brigatto é uma loja de doces gourmet e finos. Oferecemos opções ideais para presentes,
-                    festas, eventos ou para quem quer saborear um doce especial no dia a dia.<br></h2>
-                <h2 id="main-entrega">Fazemos entregas para toda a cidade de Horizonte-CE.</h2>
+            <div class="container">
+
+                <div class="main-text">
+                    <img src="img/logo.png" class="img-main" alt="Logo da marca">
+                    <h1>Porque amor também se serve em forminha</h1>
+                    <h2>A Brigatto é uma loja de doces gourmet e finos. Oferecemos opções ideais para presentes,
+                        festas, eventos ou para quem quer saborear um doce especial no dia a dia.<br></h2>
+                    <h2 id="main-entrega">Fazemos entregas para toda a cidade de Horizonte-CE.</h2>
+                </div>
+                
             </div>
-            
-        </div>
+
+        </section>
 
     </main>
 
@@ -96,16 +109,20 @@
 
                 <div class="card-produto">
                         <img src="img/produtos/Caixa Brigadeiro.jpg" alt="Caixa de brigadeiro">
-                    <h2>Caixinha de Brigadeiros</h2>
-                    <p>A caixinha de brigadeiros é composta por 4 brigadeiros gourmet, tamanho de 25 gramas.<br>
-                    Confira as opções na próxima sessão</p>
+                    <h2>Caixinha de Brigadeiros Gourmet</h2>
+                    <div class="descricao-produto">
+                        <p>A caixinha de brigadeiros é composta por 4 brigadeiros gourmet, tamanho de 25 gramas.<br>
+                            Confira as opções na próxima sessão</p>
+                    </div>
                     <a href="#onde-comprar" >R$: 9,00</a>
                 </div>
 
                 <div class="card-produto">
                         <img src="img/produtos/cupcake.jpg" alt="Caixa de brigadeiro">
                     <h2>Caixinha de Cupcakes</h2>
-                    <p>A caixinha de cupcakes é composta por dois cupcakes recheados sabor chocolate.</p>
+                    <div class="descricao-produto">
+                        <p>A caixinha de cupcakes é composta por dois cupcakes recheados sabor chocolate.</p>
+                    </div>
                     <a href="#onde-comprar" >R$: 11,00</a>
                 </div>
 
@@ -171,7 +188,6 @@
                 <h1>Sobre mim</h1>
             </div>
 
-
             <div class="card-sobre-mim">
 
                     <div class="moldura-sobre">
@@ -208,10 +224,18 @@
 
             <div class="comprar"> 
 
+                <img src="./img/onde-comprar.jpg">
+
+                <div class="comprar-info">
+
+                    <h1>Agora que você já escolheu, aproveita e clica no botão abaixo para fazer seu o pedido!</h1>
                 <a href="https://wa.me/558592439318?text=Ol%C3%A1%2C%20voc%C3%AA%20est%C3%A1%20aceitando%20encomedas%3F">
-                    <img src="img/logo.png" alt="logo da marca">
-                    <h1>FAÇA SEU PEDIDO <br> (Apenas para Horizonte-CE)</h1>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <p>FAÇA SEU PEDIDO <br>(Apenas para Horizonte-CE)</p>
                 </a>
+
+                </div>
+                
 
             </div>
 
@@ -238,5 +262,6 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/pagina_ativa.js"></script>
 </body>
 </html>

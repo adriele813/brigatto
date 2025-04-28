@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
     --choco : #411900;
     --w-choco: #FFCA99;
     --logo-pink: #E91E63;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /*Aplica um comportamento padrão para todos os elementos exceto os dialogs*/
@@ -27,6 +34,10 @@ html, body {
     text-decoration: none;
   }
 
+  * {
+    font-family: "Poppins", sans-serif;
+  }
+
 
 /*Aplica a cor na barra de navegação*/
 .background-choco {
@@ -40,12 +51,19 @@ html, body {
     margin: 0 auto;
 }
 
+/*Fixa a navbar*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 /*Define a fonte da barra de navegação*/
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 4px 0;
 }
 
 /*Define o estilo da logo*/
@@ -65,11 +83,19 @@ nav {
 
 .paginas li{
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 .paginas a {
     color: white;
+}
+
+
+.ativa {
+    border-bottom: 3px solid var(--logo-pink);
+    font-weight: 900;
 }
 
 
@@ -98,14 +124,13 @@ nav {
 
 .modal-header h1{
     color: var(--logo-pink) ;
-    font-family: "Pacifico", cursive;
+    font-family: "Lobster", sans-serif;
     font-weight: bolder;
     margin: 0;
     font-size: 30px;
 }
 
 .modal-body h2 {
-    font-family: "Pacifico", cursive;
     color: var(--choco);
     margin: 20px;
     font-size: 20px;
@@ -115,10 +140,11 @@ nav {
     border: none;
     padding: 20px 20px;
     border-radius: 20px;
-    background-color: pink;
+    background-color: #ffc0cb;
     font-weight: bolder;
     font-size: 20px;
     color: var(--choco);
+    cursor: pointer;
 }
 
 dialog::backdrop {
@@ -145,13 +171,15 @@ dialog::backdrop {
     padding: 20px 0;
     color: var(--logo-pink);
     font-family: "Pacifico", cursive;
+    margin: 0px;
+    font-size: 35px;
 
 }
 
 .main-text h2 {
     padding: 20px 0;
-    color: var(--choco);
     font-weight: bolder;
+    margin: 0px;
 }
 
 #main-entrega {
@@ -162,13 +190,13 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Pacifico", cursive;
 }
 
 .titulo-sec h1 {
     font-size: 30px ;
     color: var(--logo-pink);
     margin-bottom: 20px;
+    font-family: "Pacifico", cursive;
 }
 
 /*Define um padrão para a linha de separação das seções*/
@@ -178,6 +206,7 @@ dialog::backdrop {
     border: 0px;
     background-color: var(--logo-pink);
     margin: 20px;
+    margin: 0;
 }
 
 
@@ -196,15 +225,25 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     max-width: 300px;
     text-align: center;
+
+
+    border-radius: 20px;
+    padding: 20px 20px;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    background-color: white;
+    
 }
 
 
 .card-produto h2 {
     font-size: 25px;
     color: var(--logo-pink);
+
+    font-family: "Lobster", sans-serif;
 }
 
 .card-produto p {
@@ -226,25 +265,35 @@ dialog::backdrop {
 
 .card-produto a {
     display: flex;
-    background-color: pink;
     width: 200px;
-    color: var(--choco);
     height: 40px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
 
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 40px;
     margin-top: auto;
     
+    color: var(--logo-pink);
+    font-family: "Lobster", sans-serif;
 }
 
-.card-produto a:hover {
-    transition: 200ms;
-    background-color: var(--logo-pink);
+
+.descricao-produto {
+    margin-top: auto;
 }
 
+
+/*Remove a Box Shadow dos cards dos brigadeiros*/
+
+.brigadeiros .card-produto {
+    box-shadow: none;
+}
+
+.brigadeiros .lista-produtos {
+    gap: 0;
+}
 
 /*Define a estilização da area sobre*/
 
@@ -266,28 +315,24 @@ dialog::backdrop {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    margin-bottom: 50px;
 }
 
 .card-sobre-mim h1 {
     color: var(--logo-pink);
     padding: 20px 0;
     font-size: 40px;
+    font-family: "Lobster", sans-serif;
 }
-
-.card-sobre-mim h2 {
-    color: var(--choco);
-}
-
-
-
 
 /*Define a estilização da seção de compra*/
 
 .comprar {
     display: flex;
-    justify-content: center;
-    padding: 100px 0px;
+    justify-content: space-between;
+    padding: 50px 0px;
+    align-items: center;
+    text-align: center;
 
 }
 .comprar a{
@@ -297,9 +342,13 @@ dialog::backdrop {
     text-decoration: none;
     color: black;
     padding: 20px 30px;
+    gap: 20px;
     border-radius: 30px;
     background-color: pink;
     text-align: center;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1); 
+
+    cursor: pointer;
 }
 
 .comprar a:hover {
@@ -308,9 +357,30 @@ dialog::backdrop {
 }
 
 .comprar img{
-    width: 100px;
-    height: 100px;
+    width: 550px;
+    height: 500px;
     margin-right: 20px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.comprar p {
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.comprar i {
+    font-size: 80px;
+}
+
+.comprar-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
 }
 
 
@@ -324,22 +394,24 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
 }
-
 
 .footer-data a {
     display: flex;
     align-items: center;
     text-decoration: none;
     gap: 4px;
-    font-family: "Pacifico", cursive;
     color: black;
 }
 
 .footer-data img {
     width: 40px;
     height: 40px;
+}
+
+.footer-data h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 35px;
 }
 
 
@@ -353,9 +425,31 @@ footer {
 }
 
 
+/*Define as medias querys para responsividade da página*/
+@media(max-width: 500px){
+    
+    .lista-produtos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-/*Define os codigos para responsividade da página*/
-@media(max-width: 1022px){
+    .comprar a{
+        flex-direction: column;
+        padding: 5px 5px;
+        gap: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .comprar img {
+        height: 300px;
+        width: 250px;
+    }
+}
+
+
+@media(max-width: 1100px) {
     .paginas{
         transition: 200ms;
         position: fixed;
@@ -380,12 +474,16 @@ footer {
     
     .menu-mobile{
         display: block;
+        cursor: pointer;
     }
 
 
-    .lista-produtos {
-        display: flex;
+    .comprar {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .comprar img {
+        height: 400px;
+        width: 350px;
     }
 }
