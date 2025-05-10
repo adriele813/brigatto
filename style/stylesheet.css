@@ -229,13 +229,13 @@ dialog::backdrop {
     max-width: 300px;
     text-align: center;
 
-
     border-radius: 20px;
     padding: 20px 20px;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
     background-color: white;
-    
+
+
 }
 
 
@@ -285,6 +285,24 @@ dialog::backdrop {
 }
 
 
+/*Cria uma classe especial para cards*/
+
+.especial {
+    border-style: solid;
+    border-color: var(--logo-pink);
+}
+
+.especial i {
+    font-size: 50px;
+    color: var(--logo-pink);
+}
+
+.mark {
+    display: flex;
+    gap:50px;
+}
+
+
 /*Remove a Box Shadow dos cards dos brigadeiros*/
 
 .brigadeiros .card-produto {
@@ -330,11 +348,12 @@ dialog::backdrop {
 .comprar {
     display: flex;
     justify-content: space-between;
-    padding: 50px 0px;
     align-items: center;
     text-align: center;
+    margin-bottom: 50px;
 
 }
+
 .comprar a{
     display: flex;
     align-items: center;
@@ -351,17 +370,25 @@ dialog::backdrop {
     cursor: pointer;
 }
 
+.comprar h1 {
+    font-size: 20px;
+}
+
 .comprar a:hover {
     transition: 200ms;
     background-color: var(--logo-pink);
 }
 
-.comprar img{
-    width: 550px;
-    height: 500px;
-    margin-right: 20px;
-    border-radius: 20px;
+#video_comprar{
+    width: 360px;
+    height: 640px;
     margin: 0;
+    border-radius: 30px;
+}
+
+.moldura-video {
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .comprar p {
@@ -382,7 +409,6 @@ dialog::backdrop {
     gap: 20px;
 
 }
-
 
 
 /*Define a estilização do rodapé da página*/
@@ -435,16 +461,22 @@ footer {
     }
 
     .comprar a{
-        flex-direction: column;
         padding: 5px 5px;
-        gap: 0;
+        gap: 30px;
         margin: 0;
         width: 100%;
     }
 
-    .comprar img {
-        height: 300px;
-        width: 250px;
+    .comprar i {
+        font-size: 60px;
+    }
+
+    .comprar h1 {
+        font-size: 25px;
+    }
+
+    .brigadeiros .card-produto {
+        margin: 0;
     }
 }
 
@@ -482,8 +514,14 @@ footer {
         flex-direction: column;
     }
 
-    .comprar img {
-        height: 400px;
-        width: 350px;
+    .comprar h1 {
+        padding:  20px;
+        max-width: 400px;
+        font-size: 25px;
+    }
+
+    #video_comprar {
+        height: 420px;
+        width: 240px;
     }
 }
